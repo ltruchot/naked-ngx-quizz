@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -16,6 +15,17 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "baseUrl": "./src/",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@core/*": ["app/core/*"],
+      "@services/*": ["app/core/services/*"],
+      "@shared/*": ["app/shared/*"],
+      "@models/*": ["app/shared/models/*"],
+      "@pipes/*": ["app/shared/pipes/*"],
+      "@helpers/*": ["app/shared/helpers/*"],
+      "@env/*": ["environments/*"]
+    }
   }
 }

@@ -2,11 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { QuizzComponent } from './quizz/quizz.component';
-import { AnwserComponent } from './anwser/anwser.component';
+import { QuizzComponent } from '@core/components/quizz/quizz.component';
+import { AnwserComponent } from '@core/components/quizz/anwser/anwser.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ScorePipe } from './pipes/score.pipe';
-import { TranslatePipe } from './pipes/translate.pipe';
+import { ScorePipe } from '@pipes/score.pipe';
+import { TranslatePipe } from '@pipes/translate.pipe';
 
 @NgModule({
   declarations: [

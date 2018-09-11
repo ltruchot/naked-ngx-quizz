@@ -8,9 +8,9 @@ import {
   Output, // CHA service
   SimpleChanges
 } from '@angular/core';
-import { IQuizz } from '../models/quizz.model';
-import { shuffle } from '../helpers/array.helper';
-import { ScoreService } from '../services/score.service'; /* CHA service*/
+import { IQuizz } from '@models/quizz.model';
+import { shuffle } from '@helpers/array.helper';
+import { ScoreService } from '@services/score.service'; /* CHA service*/
 
 @Component({
   selector: 'app-quizz',
@@ -28,11 +28,6 @@ export class QuizzComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnInit(): void {
     console.log('quizz init !');
-    // CHA service
-    // ----
-    this._scoreService.answerNumber = 0;
-    this._scoreService.score = 0;
-    // ----
   }
 
   ngOnChanges(changes: SimpleChanges): void {

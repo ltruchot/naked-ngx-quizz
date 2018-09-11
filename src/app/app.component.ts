@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { IAppInfos } from './models/app.model';
-import { IQuizz, IQuizzItem } from './models/quizz.model';
-import { shuffle } from './helpers/array.helper';
-import { HttpService } from './services/http.service';
+import { IAppInfos } from '@models/app.model';
+import { IQuizz, IQuizzItem } from '@models/quizz.model';
+import { shuffle } from '@helpers/array.helper';
+import { HttpService } from '@services/http.service';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { ScoreService } from './services/score.service';
+import { ScoreService } from '@services/score.service';
 
 @Component({
   selector: 'app-root',
@@ -35,6 +35,11 @@ export class AppComponent implements OnInit {
 
   startGame(): void {
     this.isStarted = true;
+    // CHA service
+    // ----
+    this.scoreService.answerNumber = 0;
+    this.scoreService.score = 0;
+    // ----
   }
 
   endGame(): void {

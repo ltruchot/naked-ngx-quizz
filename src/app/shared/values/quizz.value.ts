@@ -1,4 +1,4 @@
-import { IQuizzItem } from '../models/quizz.model';
+import { IQuizzItem } from '@models/quizz.model';
 
 export const herbalQuizzItems: IQuizzItem[] = [
   {
