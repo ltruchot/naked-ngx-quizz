@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
   private score = 0;
   ngOnInit() {
     this.herbalQuizz = this.formatQuizz(herbalQuizzItems);
+    console.log(this.herbalQuizz);
   }
 
   startGame() {
