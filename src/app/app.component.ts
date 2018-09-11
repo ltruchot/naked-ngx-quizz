@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IAppInfos } from './models/app.model';
 import { herbalQuizzItems } from './values/quizz.value';
 import { IQuizz, IQuizzItem } from './models/quizz.model';
+import { shuffle } from './helpers/array.helper';
 
 @Component({
   selector: 'app-root',
@@ -39,22 +40,14 @@ export class AppComponent implements OnInit {
         .map(item => item.answer)
         .filter(a => a !== answer);
       // shuffle them and keep the first 3 + the correct
-      this.shuffle(otherAnswer);
+      shuffle(otherAnswer);
       const answers = [...otherAnswer.slice(0, 3), answer];
-      this.shuffle(answers);
+      shuffle(answers);
       return {
         question,
         answers,
         rightIndex: answers.findIndex(a => a === answer),
       };
     });
-  }
-
-  shuffle(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
   }
 }

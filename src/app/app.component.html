@@ -1,21 +1,19 @@
 <div class="container">
-  <div class="row">
-    <div class="col-12">
-      <h1>{{ title }} {{ 'v' + appInfos?.version }}</h1>
-      <h2 *ngIf="appInfos && appInfos.theme">Theme: <span>{{appInfos.theme}}</span></h2>
-      <div *ngIf="!isStarted">
 
-        <label>User name: </label> <input [(ngModel)]="user" /><br />
-        <button (click)="startGame()"
-                class="btn btn-primary"
-                [disabled]="!user">Start game as {{ user }}</button>
-      </div>
-      <div *ngIf="isStarted">
-        Game has begin with player {{ user}}<br />
-        <button (click)="endGame()"
-                class="btn btn-danger">Stop game</button>
-        <app-quizz [content]="herbalQuizz"></app-quizz>
-      </div>
-    </div>
+  <h1>{{ title }} {{ 'v' + appInfos?.version }}</h1>
+  <h2 *ngIf="appInfos && appInfos.theme">Theme: <span>{{appInfos.theme}}</span></h2>
+  <div *ngIf="!isStarted">
+
+    <label>User name: </label> <input [(ngModel)]="user" /><br />
+    <button (click)="startGame()"
+            class="btn btn-primary"
+            [disabled]="!user">Start game as {{ user }}</button>
   </div>
+  <div *ngIf="isStarted">
+    Game has begin with player {{ user}}<br />
+    <button (click)="endGame()"
+            class="btn btn-danger">Stop game</button>
+    <app-quizz [content]="herbalQuizz"></app-quizz>
+  </div>
+
 </div>
