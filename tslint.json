@@ -76,8 +76,7 @@
     "no-empty-interface": true,
     "no-eval": true,
     "no-inferrable-types": [
-      true,
-      "ignore-params"
+      false
     ],
     "no-misused-new": true,
     "no-non-null-assertion": true,
@@ -141,6 +140,16 @@
       true,
       "allow-null-check"
     ],
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "property-declaration",
+      "variable-declaration",
+      "member-variable-declaration",
+      "object-destructuring",
+      "array-destructuring"
+    ],
     "typedef-whitespace": [
       true,
       {
@@ -180,6 +189,5 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true
-  },
-  "defaultSeverity": "warning"
+  }
 }

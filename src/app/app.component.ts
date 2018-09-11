@@ -4,23 +4,22 @@ import { IAppInfos } from './models/app.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Quizz generator';
-  isStarted = false;
+  title: string = 'Quizz generator';
+  isStarted: boolean = false;
   appInfos: IAppInfos = {
     version: 1,
     theme: 'herbalism',
   };
   user: string;
-  private score = 0;
+  private score: number = 0;
 
-  startGame() {
+  startGame(): void {
     this.isStarted = true;
   }
 
-  endGame() {
+  endGame(): void {
     window.alert(`Game over ${this.user}. Score: ${this.score}`);
     this.isStarted = false;
   }
