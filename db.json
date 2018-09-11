@@ -1,0 +1,42 @@
+{
+  "quizz": [{
+     "question": "Quelle plante a des vertus digestives ?",
+     "answer": "La menthe",
+     "theme": "Herboristerie"
+  },
+  {
+     "question": "Quelle plante fait mieux dormir ?",
+     "answer": "La valériane",
+     "theme": "Herboristerie"
+  },
+  {
+     "question": "Quelle plante rend heureux ?",
+     "answer": "Le millepertuis",
+     "theme": "Herboristerie"
+  },
+  {
+     "question": "Quelle plante soigne les brûlures ?",
+     "answer": "La lavande",
+     "theme": "Herboristerie"
+  },
+  {
+     "question": "Quelle plante stimule ?",
+     "answer": "Le maté",
+     "theme": "Herboristerie"
+  },
+  {
+     "question": "Quelle plante détoxifie le foi ?",
+     "answer": "Le romarin",
+     "theme": "Herboristerie"
+  },
+  {
+     "question": "Quelle plante aide à cicatriser ?",
+     "answer": "L'aloe vera",
+     "theme": "Herboristerie"
+  },
+  {
+     "question": "Quelle plante est reminéralisante ?",
+     "answer": "L'ortie",
+     "theme": "Herboristerie"
+  }]
+}

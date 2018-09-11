@@ -4,7 +4,8 @@
     {{ displayedItem?.question }}
   </div>
 </div>
-<div class="row">
+<div class="row"
+     *ngIf="displayedItem?.question">
   <div class="col-6 col-sm-3 d-flex p-1"
        *ngFor="let answer of displayedItem.answers; let i = index;">
     <div class="card"
@@ -14,11 +15,5 @@
                   [index]="i"
                   (clicked)="handleAnswerClick($event)"></app-anwser>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-12">
-    <button class="btn btn-primary"
-            (click)="displayNextItem()">Next</button>
   </div>
 </div>

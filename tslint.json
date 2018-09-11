@@ -146,9 +146,7 @@
       "parameter",
       "property-declaration",
       "variable-declaration",
-      "member-variable-declaration",
-      "object-destructuring",
-      "array-destructuring"
+      "member-variable-declaration"
     ],
     "typedef-whitespace": [
       true,
