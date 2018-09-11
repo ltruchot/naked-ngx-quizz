@@ -12,22 +12,21 @@ export class QuizzComponent implements OnInit, OnDestroy {
   content: IQuizz[];
   currentItems: IQuizz[];
   displayedItem: IQuizz;
-
-  dirty = false;
+  dirty: boolean = false;
   constructor() {}
 
   getDirtyBgColor(index: number): string {
     if (!this.dirty) {
       return 'white';
     }
-    return this.displayedItem.rightIndex === index ? 'green' : 'red'; 
+    return this.displayedItem.rightIndex === index ? 'green' : 'red';
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     console.log('quizz init !');
     this.displayNextItem();
   }
-  displayNextItem() {
+  displayNextItem(): void {
     if (this.currentItems && this.currentItems.length) {
       this.displayedItem = this.currentItems.splice(-1, 1)[0];
     } else {
@@ -35,7 +34,7 @@ export class QuizzComponent implements OnInit, OnDestroy {
       this.displayNextItem();
     }
   }
-  handleAnswerClick(index: number) {
+  handleAnswerClick(index: number): void {
     this.dirty = true;
     setTimeout(() => {
       window.alert(index === this.displayedItem.rightIndex ? 'bravo' : 'wrong');
@@ -43,7 +42,7 @@ export class QuizzComponent implements OnInit, OnDestroy {
       this.dirty = false;
     }, 0);
   }
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     console.log('quizz destroyed !');
   }
 }

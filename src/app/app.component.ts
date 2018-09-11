@@ -10,25 +10,25 @@ import { shuffle } from './helpers/array.helper';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'Quizz generator';
-  isStarted = false;
+  title: string = 'Quizz generator';
+  isStarted: boolean = false;
   appInfos: IAppInfos = {
     version: 1,
     theme: 'herbalism',
   };
   user: string;
   herbalQuizz: IQuizz[];
-  private score = 0;
-  ngOnInit() {
+  private score: number = 0;
+  ngOnInit(): void {
     this.herbalQuizz = this.formatQuizz(herbalQuizzItems);
     console.log(this.herbalQuizz);
   }
 
-  startGame() {
+  startGame(): void {
     this.isStarted = true;
   }
 
-  endGame() {
+  endGame(): void {
     window.alert(`Game over ${this.user}. Score: ${this.score}`);
     this.isStarted = false;
   }
@@ -36,12 +36,12 @@ export class AppComponent implements OnInit {
   formatQuizz(quizzItems: IQuizzItem[]): IQuizz[] {
     return quizzItems.map(({ question, answer }) => {
       // get all other answer
-      const otherAnswer = quizzItems
+      const otherAnswer: string[] = quizzItems
         .map(item => item.answer)
         .filter(a => a !== answer);
       // shuffle them and keep the first 3 + the correct
       shuffle(otherAnswer);
-      const answers = [...otherAnswer.slice(0, 3), answer];
+      const answers: string[] = [...otherAnswer.slice(0, 3), answer];
       shuffle(answers);
       return {
         question,

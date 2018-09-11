@@ -14,7 +14,7 @@ export class AnwserComponent {
   clicked: EventEmitter<number> = new EventEmitter();
   constructor() {}
 
-  emitIndex(evt: MouseEvent) {
+  emitIndex(evt: MouseEvent): void {
     evt.stopPropagation();
     evt.preventDefault();
     this.clicked.emit(this.index);
