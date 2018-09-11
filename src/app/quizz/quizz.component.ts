@@ -28,11 +28,6 @@ export class QuizzComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnInit(): void {
     console.log('quizz init !');
-    // CHA service
-    // ----
-    this._scoreService.answerNumber = 0;
-    this._scoreService.score = 0;
-    // ----
   }
 
   ngOnChanges(changes: SimpleChanges): void {

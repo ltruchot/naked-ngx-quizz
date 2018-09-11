@@ -34,6 +34,11 @@ export class AppComponent implements OnInit {
   }
 
   startGame(): void {
+    // CHA service
+    // ----
+    this.scoreService.answerNumber = 0;
+    this.scoreService.score = 0;
+    // ----
     this.isStarted = true;
   }
 
