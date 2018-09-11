@@ -20,7 +20,7 @@ export class QuizzComponent implements OnInit, OnDestroy {
     if (!this.dirty) {
       return 'white';
     }
-    return this.displayedItem.rightIndex === index ? 'green' : 'red';
+    return this.displayedItem.rightIndex === index ? 'green' : 'red'; 
   }
 
   ngOnInit() {
