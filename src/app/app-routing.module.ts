@@ -12,6 +12,13 @@ const routes: Routes = [
     path: 'not-found',
     loadChildren: '@routes/not-found/not-found.module#NotFoundModule',
   },
+  // CHA: routing
+  // ------------
+  {
+    path: 'edit-quizz/:id',
+    loadChildren: '@routes/edit-quizz/edit-quizz.module#EditQuizzModule',
+  },
+  // ------------
   {
     path: '**',
     redirectTo: '/not-found',
