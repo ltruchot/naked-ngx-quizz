@@ -1,2 +1,69 @@
-<pre>{{ item$ | async | json }}</pre>
 <a routerLink='/home/herbalism'>back home</a>
+{{ form.value | json }}
+<!-- template driven form, where template is source of truth-->
+<form #form="ngForm"
+      (ngSubmit)="handleSubmit(form.value, form.valid)"
+      novalidate>
+      <div class="form-group">
+            <label for="question">Question:</label>
+            <input class="form-control"
+                   name="question"
+                   type="text"
+                   #question="ngModel"
+                   [ngModel]="currentItem?.question"
+                   required />
+            <span style="color: red;"
+                  *ngIf="question?.errors?.required && question.dirty ">required field</span>
+      </div>
+      <div class="form-group">
+            <label for="answer">Answer:</label>
+            <input class="form-control"
+                   name="answer"
+                   type="text"
+                   #answer="ngModel"
+                   [ngModel]="currentItem?.answer"
+                   required />
+            <span style="color: red;"
+                  *ngIf="answer?.errors?.required && answer.dirty ">required field</span>
+      </div>
+      <!-- CHA: forms-->
+      <div class="form-group">
+            <label for="theme">Theme:</label>
+            <input class="form-control"
+                   name="theme"
+                   type="text"
+                   #theme="ngModel"
+                   [ngModel]="currentItem?.theme"
+                   required />
+            <span style="color: red;"
+                  *ngIf="theme?.errors?.required && theme.dirty ">required field</span>
+      </div>
+      <!-- -------- -->
+      <button class="btn btn-primary"
+              type="submit"
+              [disabled]="form.invalid">create / edit</button>
+</form>
+<form *ngIf="formQuizz"
+      [formGroup]="formQuizz"
+      (ngSubmit)="handleSubmit(formQuizz.value, formQuizz.valid)">
+      <div class="form-group">
+            <label for="question">Question:</label>
+            <input class="form-control"
+                   formControlName="question"
+                   type="text" />
+            <span style="color: red;"
+                  *ngIf="formQuizz.get('question').invalid && formQuizz.get('question').dirty ">required field</span>
+      </div>
+      <div class="form-group">
+            <label for="answer">Answer:</label>
+            <input class="form-control"
+                   formControlName="answer"
+                   type="text" />
+            <span style="color: red;"
+                  *ngIf="formQuizz.get('answer').invalid && formQuizz.get('answer').dirty ">required field</span>
+
+      </div>
+      <button class="btn btn-primary"
+              type="submit"
+              [disabled]="formQuizz.invalid">create / edit</button>
+</form>
