@@ -1,0 +1,16 @@
+<h2 *ngIf="theme">Theme: <span>{{ theme | translate }}</span><!-- CHA --> / Score: {{
+  scoreService.winRate | score }}</h2>
+
+<div *ngIf="!isStarted">
+  <label>User name: </label> <input [(ngModel)]="user" /><br />
+  <button (click)="startGame()"
+          class="btn btn-primary"
+          [disabled]="!user">Start game as {{ user }}</button>
+</div>
+<div *ngIf="isStarted">
+  Game has begin with player {{ user }}, {{ today | date:'shortTime' }} <br />
+  <button (click)="endGame()"
+          class="btn btn-danger">Stop game</button>
+  <app-quizz [content]="(herbalQuizz$ | async)"
+             (stop)="endGame()"></app-quizz><!-- CHA -->
+</div>

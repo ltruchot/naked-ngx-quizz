@@ -1,15 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ScorePipe } from '@pipes/score.pipe';
-import { TranslatePipe } from '@pipes/translate.pipe';
-import { QuizzModule } from '@app/core/components/quizz/quizz.module';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeModule } from '@app/routes/home/home.module';
 
 @NgModule({
-  declarations: [AppComponent, ScorePipe, TranslatePipe],
-  imports: [BrowserModule, FormsModule, HttpClientModule, QuizzModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, HomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })

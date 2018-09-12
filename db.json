@@ -2,41 +2,70 @@
   "quizz": [{
      "question": "Quelle plante a des vertus digestives ?",
      "answer": "La menthe",
-     "theme": "Herboristerie"
+     "theme": "herbalism",
+     "id": 0
   },
   {
      "question": "Quelle plante fait mieux dormir ?",
      "answer": "La valériane",
-     "theme": "Herboristerie"
+     "theme": "herbalism",
+     "id": 1
   },
   {
      "question": "Quelle plante rend heureux ?",
      "answer": "Le millepertuis",
-     "theme": "Herboristerie"
+     "theme": "herbalism",
+     "id": 2
   },
   {
      "question": "Quelle plante soigne les brûlures ?",
      "answer": "La lavande",
-     "theme": "Herboristerie"
+     "theme": "herbalism",
+     "id": 3
   },
   {
      "question": "Quelle plante stimule ?",
      "answer": "Le maté",
-     "theme": "Herboristerie"
+     "theme": "herbalism",
+     "id": 4
   },
   {
      "question": "Quelle plante détoxifie le foi ?",
      "answer": "Le romarin",
-     "theme": "Herboristerie"
+     "theme": "herbalism",
+     "id": 5
   },
   {
      "question": "Quelle plante aide à cicatriser ?",
      "answer": "L'aloe vera",
-     "theme": "Herboristerie"
+     "theme": "herbalism",
+     "id": 6
   },
   {
      "question": "Quelle plante est reminéralisante ?",
      "answer": "L'ortie",
-     "theme": "Herboristerie"
+     "theme": "herbalism",
+     "id": 7
+  },
+  {
+     "question": "Quelle est la portée d'une variable déclarée avec 'var' ?",
+     "answer": "La fonction",
+     "theme": "javascript",
+     "id": 8
+  }, {
+    "question": "Quelle est la portée d'une variable déclarée avec 'let' ?",
+    "answer": "Le block",
+    "theme": "javascript",
+    "id": 9
+  }, {
+    "question": "Quelle est la portée d'une variable déclarée directement, sans var, ni let, ni const ?",
+    "answer": "Globale, et c'est mal.",
+    "theme": "javascript",
+    "id": 10
+  }, {
+    "question": "A quoi fait référence 'this' dans une méthode de classe",
+    "answer": "L'instance",
+    "theme": "javascript",
+    "id": 11
   }]
 }
