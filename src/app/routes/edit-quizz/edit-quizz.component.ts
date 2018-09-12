@@ -49,6 +49,17 @@ export class EditQuizzComponent implements OnInit {
   handleSubmit(value: IQuizzItem, isValid: boolean): void {
     if (isValid) {
       console.log('post', value);
+      // CHA: forms
+      // ------
+      if (this.currentItem.id) {
+        this._httpService
+          .put('quizz/' + this.currentItem.id, value)
+          .subscribe();
+      } else {
+        this._httpService.post('quizz', value).subscribe();
+      }
+
+      // ------
     }
   }
 }

@@ -25,6 +25,31 @@ export class HttpService {
       .pipe(catchError(this._throwReactiveError)) as Observable<T>;
   }
 
+  // CHA: forms
+  // ------
+  // request with body
+  post<T>(url: string, body: object): Observable<T> {
+    const options: IReqOptions = {
+      headers: this._createHeaders(),
+    };
+    return this.http
+      .post(this._defaultApi + url, body, options)
+      .pipe(catchError(this._throwReactiveError)) as Observable<T>;
+  }
+  // ------
+  // CHA: forms
+  // ------
+  // request with body
+  put<T>(url: string, body: object): Observable<T> {
+    const options: IReqOptions = {
+      headers: this._createHeaders(),
+    };
+    return this.http
+      .put(this._defaultApi + url, body, options)
+      .pipe(catchError(this._throwReactiveError)) as Observable<T>;
+  }
+  // ------
+
   private _createHeaders(): HttpHeaders {
     return new HttpHeaders({
       'Content-Type': this._defaultContentType,
